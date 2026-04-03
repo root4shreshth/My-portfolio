@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface NavLink {
   label: string;
@@ -63,6 +63,15 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
   ],
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour >= 5 && hour < 12) setGreeting("Good Morning.");
+    else if (hour >= 12 && hour < 17) setGreeting("Good Afternoon.");
+    else if (hour >= 17 && hour < 21) setGreeting("Good Evening.");
+    else setGreeting("Working Late?");
+  }, []);
 
   return (
     <section
@@ -203,7 +212,12 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
               </span>
             </div>
 
-            {/* Title */}
+            {/* Greeting + Title */}
+            {greeting && (
+              <p className="text-[14px] sm:text-[16px] text-white/40 font-sans mb-3 animate-fade-slide-in-1">
+                {greeting} I&apos;m
+              </p>
+            )}
             <h1 className="sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-4xl text-white tracking-tight font-instrument-serif font-normal animate-fade-slide-in-2">
               {title}
               <br className="hidden sm:block" />

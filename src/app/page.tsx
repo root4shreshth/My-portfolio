@@ -6,10 +6,14 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
+import CommandPalette from "@/components/ui/CommandPalette";
+import AiChatBubble from "@/components/ui/AiChatBubble";
 
 export default function Home() {
   return (
     <>
+      <CommandPalette />
+      <AiChatBubble />
       <main id="main-content">
         <HeroSection />
         <AboutSection />
