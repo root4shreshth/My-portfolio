@@ -9,9 +9,8 @@ interface NavLink {
 }
 
 interface Partner {
-  logoUrl: string;
+  name: string;
   href: string;
-  label: string;
 }
 
 interface ResponsiveHeroBannerProps {
@@ -34,8 +33,8 @@ interface ResponsiveHeroBannerProps {
 }
 
 const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
-  logoText = "Shreshth",
-  backgroundImageUrl = "/images/hero-bg.png",
+  logoText = "Shreshth.",
+  backgroundImageUrl = "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0e2dbea0-c0a9-413f-a57b-af279633c0df_3840w.jpg",
   navLinks = [
     { label: "Home", href: "#home", isActive: true },
     { label: "About", href: "#about" },
@@ -45,22 +44,22 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
   ],
   ctaButtonText = "Get In Touch",
   ctaButtonHref = "#contact",
-  badgeLabel = "2026",
-  badgeText = "Automation Engineer",
-  title = "Shreshth",
-  titleLine2 = "Srivastava",
+  badgeLabel = "New",
+  badgeText = "Open to Full-Time & Contract Roles 2026",
+  title = "Shreshth Srivastava",
+  titleLine2 = "Automation Engineer",
   description = "Building production-grade AI systems that integrate LLMs, real-time speech pipelines, and cloud APIs. Proven ability to ship reliable, observable systems that scale across business operations.",
   primaryButtonText = "Connect with me",
   primaryButtonHref = "https://Wa.me/+919335963562",
   secondaryButtonText = "Download Resume",
   secondaryButtonHref = "/Shreshth-Srivastava-Resume.pdf",
-  partnersTitle = "Tech stack & tools I work with",
+  partnersTitle = "Tools & technologies I build with",
   partners = [
-    { logoUrl: "/icons/integration-icon-1.svg", href: "#projects", label: "Sheets" },
-    { logoUrl: "/icons/integration-icon-2.svg", href: "#projects", label: "Calendar" },
-    { logoUrl: "/icons/integration-icon-3.svg", href: "#projects", label: "Chat" },
-    { logoUrl: "/icons/integration-icon-4.svg", href: "#projects", label: "Workflow" },
-    { logoUrl: "/images/skill-icon-1.png", href: "#projects", label: "Langchain" },
+    { name: "Python", href: "#projects" },
+    { name: "Next.js", href: "#projects" },
+    { name: "LLMs", href: "#projects" },
+    { name: "Twilio", href: "#projects" },
+    { name: "n8n", href: "#projects" },
   ],
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -76,18 +75,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
         alt=""
         className="w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0"
       />
-      {/* Dark overlays for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30" />
       <div className="pointer-events-none absolute inset-0 ring-1 ring-black/30" />
-
-      {/* Purple ambient glow */}
-      <div
-        className="absolute top-[25%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse, rgba(79,26,214,0.2) 0%, transparent 70%)",
-        }}
-      />
 
       {/* Header / Nav */}
       <header className="z-10 xl:top-4 relative">
@@ -96,7 +84,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             {/* Logo */}
             <a
               href="#home"
-              className="text-[18px] font-semibold text-white font-[family-name:var(--font-dm-sans)] tracking-[-0.5px] hover:opacity-80 transition-opacity"
+              className="text-[20px] font-normal text-white font-instrument-serif italic tracking-normal hover:opacity-80 transition-opacity"
             >
               {logoText}
             </a>
@@ -108,7 +96,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                   <a
                     key={index}
                     href={link.href}
-                    className={`px-3 py-2 text-sm font-medium hover:text-white font-[family-name:var(--font-dm-sans)] transition-colors ${
+                    className={`px-3 py-2 text-sm font-medium hover:text-white font-sans transition-colors ${
                       link.isActive ? "text-white/90" : "text-white/80"
                     }`}
                   >
@@ -117,7 +105,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 ))}
                 <a
                   href={ctaButtonHref}
-                  className="ml-1 inline-flex items-center gap-2 rounded-full bg-accent-purple px-3.5 py-2 text-sm font-medium text-white hover:brightness-125 font-[family-name:var(--font-dm-sans)] transition-all purple-glow"
+                  className="ml-1 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-sm font-medium text-neutral-900 hover:bg-white/90 font-sans transition-colors"
                 >
                   {ctaButtonText}
                   <svg
@@ -183,7 +171,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                     key={index}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-colors font-[family-name:var(--font-dm-sans)]"
+                    className="px-4 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-colors font-sans"
                   >
                     {link.label}
                   </a>
@@ -191,7 +179,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 <a
                   href={ctaButtonHref}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-accent-purple px-4 py-3 text-sm font-medium text-white hover:brightness-125 font-[family-name:var(--font-dm-sans)] transition-all purple-glow"
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-medium text-neutral-900 hover:bg-white/90 font-sans transition-colors"
                 >
                   {ctaButtonText}
                 </a>
@@ -207,10 +195,10 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
           <div className="mx-auto max-w-3xl text-center">
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-2.5 py-2 ring-1 ring-white/15 backdrop-blur animate-fade-slide-in-1">
-              <span className="inline-flex items-center text-xs font-medium text-white bg-accent-purple rounded-full py-0.5 px-2 font-[family-name:var(--font-dm-sans)]">
+              <span className="inline-flex items-center text-xs font-medium text-neutral-900 bg-white/90 rounded-full py-0.5 px-2 font-sans">
                 {badgeLabel}
               </span>
-              <span className="text-sm font-medium text-white/90 font-[family-name:var(--font-dm-sans)]">
+              <span className="text-sm font-medium text-white/90 font-sans">
                 {badgeText}
               </span>
             </div>
@@ -219,13 +207,11 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             <h1 className="sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-4xl text-white tracking-tight font-instrument-serif font-normal animate-fade-slide-in-2">
               {title}
               <br className="hidden sm:block" />
-              {titleLine2 && (
-                <span className="italic text-white/80"> {titleLine2}</span>
-              )}
+              {titleLine2}
             </h1>
 
             {/* Description */}
-            <p className="sm:text-lg animate-fade-slide-in-3 text-base text-white/70 max-w-2xl mt-6 mx-auto font-[family-name:var(--font-dm-sans)]">
+            <p className="sm:text-lg animate-fade-slide-in-3 text-base text-white/80 max-w-2xl mt-6 mx-auto font-sans">
               {description}
             </p>
 
@@ -235,7 +221,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 href={primaryButtonHref}
                 target={primaryButtonHref.startsWith("http") ? "_blank" : undefined}
                 rel={primaryButtonHref.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 text-sm font-medium text-white bg-accent-purple hover:brightness-125 ring-1 ring-accent-purple-light/30 rounded-full py-3 px-6 font-[family-name:var(--font-dm-sans)] transition-all purple-glow"
+                className="inline-flex items-center gap-2 hover:bg-white/15 text-sm font-medium text-white bg-white/10 ring-white/15 ring-1 rounded-full py-3 px-5 font-sans transition-colors"
               >
                 {primaryButtonText}
                 <svg
@@ -258,7 +244,7 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 href={secondaryButtonHref}
                 target="_blank"
                 download={secondaryButtonHref.endsWith(".pdf") ? true : undefined}
-                className="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-6 py-3 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white font-[family-name:var(--font-dm-sans)] transition-all"
+                className="inline-flex items-center gap-2 rounded-full bg-transparent px-5 py-3 text-sm font-medium text-white/90 hover:text-white font-sans transition-colors"
               >
                 {secondaryButtonText}
                 <svg
@@ -281,24 +267,19 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
             </div>
           </div>
 
-          {/* Partners / Tech Stack */}
+          {/* Partners / Tech Stack — text-based logos like original */}
           <div className="mx-auto mt-20 max-w-5xl">
-            <p className="animate-fade-slide-in-1 text-sm text-white/50 text-center font-[family-name:var(--font-dm-sans)]">
+            <p className="animate-fade-slide-in-1 text-sm text-white/70 text-center font-sans">
               {partnersTitle}
             </p>
-            <div className="grid grid-cols-3 sm:grid-cols-5 animate-fade-slide-in-2 mt-6 items-center justify-items-center gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 animate-fade-slide-in-2 text-white/70 mt-6 items-center justify-items-center gap-4">
               {partners.map((partner, index) => (
                 <a
                   key={index}
                   href={partner.href}
-                  className="inline-flex items-center justify-center w-[44px] h-[44px] rounded-[12px] bg-white/5 ring-1 ring-white/10 backdrop-blur opacity-70 hover:opacity-100 hover:ring-white/20 transition-all"
-                  aria-label={partner.label}
+                  className="text-[18px] sm:text-[20px] font-instrument-serif italic opacity-60 hover:opacity-100 transition-opacity"
                 >
-                  <img
-                    src={partner.logoUrl}
-                    alt={partner.label}
-                    className="w-[28px] h-[28px] object-contain"
-                  />
+                  {partner.name}
                 </a>
               ))}
             </div>
