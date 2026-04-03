@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Instrument_Serif, Inter } from "next/font/google";
 import { Afacad_Flux } from "next/font/google";
 import "./globals.css";
 
@@ -7,6 +7,19 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const afacadFlux = Afacad_Flux({
@@ -95,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${afacadFlux.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${afacadFlux.variable} ${instrumentSerif.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

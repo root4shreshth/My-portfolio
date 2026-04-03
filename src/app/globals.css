@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme inline {
   --color-background: #000000;
@@ -25,9 +26,23 @@
 
   --font-heading: "Afacad Flux", sans-serif;
   --font-body: "DM Sans", sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 
   --breakpoint-tablet: 810px;
   --breakpoint-desktop: 1200px;
+}
+
+:root {
+  --bg-0: #09090b;
+  --bg-100: #18181b;
+  --bg-200: #27272a;
+  --bg-300: #3f3f46;
+  --text-100: #fafafa;
+  --text-200: #e4e4e7;
+  --text-300: #a1a1aa;
+  --text-400: #71717a;
+  --radius: 0.5rem;
 }
 
 /* Scrollbar */
@@ -51,6 +66,37 @@ body {
   color: #ffffff;
   font-family: "DM Sans", sans-serif;
   overflow-x: hidden;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in-1 {
+  animation: fadeSlideIn 0.8s ease-out 0.2s both;
+}
+.animate-fade-slide-in-2 {
+  animation: fadeSlideIn 0.8s ease-out 0.4s both;
+}
+.animate-fade-slide-in-3 {
+  animation: fadeSlideIn 0.8s ease-out 0.6s both;
+}
+.animate-fade-slide-in-4 {
+  animation: fadeSlideIn 0.8s ease-out 0.8s both;
+}
+
+/* Instrument Serif font class */
+.font-instrument-serif {
+  font-family: var(--font-instrument-serif), Georgia, serif;
 }
 
 /* ===== ACCESSIBILITY ===== */
