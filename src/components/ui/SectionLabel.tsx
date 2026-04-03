@@ -14,10 +14,11 @@ export default function SectionLabel({ text, className = "" }: SectionLabelProps
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className={`inline-flex items-center gap-2 px-[16px] py-[6px] rounded-[30px] border border-border-subtle bg-glass text-[12px] font-medium leading-[10px] tracking-[-0.2px] text-text-secondary font-[family-name:var(--font-dm-sans)] ${className}`}
+      className={`inline-flex items-center gap-3 rounded-full bg-white/10 px-2.5 py-2 ring-1 ring-white/15 backdrop-blur ${className}`}
     >
-      <span className="w-[6px] h-[6px] rounded-full bg-accent-purple" />
-      {text}
+      <span className="inline-flex items-center text-xs font-medium text-neutral-900 bg-white/90 rounded-full py-0.5 px-2 font-sans">
+        {text}
+      </span>
     </motion.div>
   );
 }

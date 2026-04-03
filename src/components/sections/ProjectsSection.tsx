@@ -10,29 +10,31 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-[1300px] px-[20px] min-[810px]:px-[30px]">
+      <div className="mx-auto max-w-5xl px-6">
         {/* Header */}
         <ScrollReveal>
           <SectionLabel text="Projects" />
         </ScrollReveal>
 
-        <div className="mt-[30px] flex flex-col min-[1200px]:flex-row min-[1200px]:items-end min-[1200px]:justify-between gap-[20px]">
+        <div className="mt-8 flex flex-col min-[1200px]:flex-row min-[1200px]:items-end min-[1200px]:justify-between gap-6">
           <ScrollReveal delay={0.1}>
-            <h2 className="text-[36px] min-[810px]:text-[46px] min-[1200px]:text-[54px] font-bold text-white leading-[1.05em] tracking-[-2px] font-[family-name:var(--font-afacad-flux)] max-w-[700px]">
-              <span className="gradient-text-red-purple">AI-Powered Projects</span>{" "}
-              for Future-Driven Businesses
+            <h2 className="text-[32px] min-[810px]:text-[44px] min-[1200px]:text-[52px] text-white leading-[1.1em] tracking-tight font-instrument-serif font-normal max-w-[600px]">
+              AI-Powered Projects
+              <br />
+              <span className="italic text-white/70">for the Future</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <Button href="https://Wa.me/+919335963562" variant="outline">
               Book a 15-min call
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
             </Button>
           </ScrollReveal>
         </div>
 
         {/* Project Grid */}
-        <div className="mt-[50px] grid grid-cols-1 min-[1200px]:grid-cols-2 gap-[20px]">
+        <div className="mt-12 grid grid-cols-1 min-[1200px]:grid-cols-2 gap-5">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <ProjectCard
@@ -47,21 +49,11 @@ export default function ProjectsSection() {
               />
             </ScrollReveal>
           ))}
-
-          {/* Coming Soon */}
-          <ScrollReveal delay={0.5}>
-            <ProjectCard
-              title=""
-              description=""
-              image=""
-              comingSoon
-            />
-          </ScrollReveal>
         </div>
 
         {/* Skill Tags Marquee */}
         <ScrollReveal delay={0.3}>
-          <div className="mt-[40px]">
+          <div className="mt-10">
             <SkillMarquee skills={skillTags} />
           </div>
         </ScrollReveal>

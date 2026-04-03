@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { experiences } from "@/lib/data";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
@@ -10,73 +9,39 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function ExperienceSection() {
   return (
     <section id="experience" className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-[1300px] px-[20px] min-[810px]:px-[30px]">
+      <div className="mx-auto max-w-5xl px-6">
         {/* Header */}
-        <div className="grid grid-cols-1 min-[1200px]:grid-cols-2 gap-[40px] min-[1200px]:gap-[50px]">
-          {/* Left - Title & Description */}
+        <div className="grid grid-cols-1 min-[1200px]:grid-cols-[1fr_auto] gap-10">
           <div>
             <ScrollReveal>
               <SectionLabel text="Experience" />
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <h2 className="text-[36px] min-[810px]:text-[46px] min-[1200px]:text-[54px] font-bold text-white leading-[1.05em] tracking-[-2px] font-[family-name:var(--font-afacad-flux)] mt-[30px]">
-                Production AI &amp; Systems Engineering
+              <h2 className="text-[32px] min-[810px]:text-[44px] min-[1200px]:text-[52px] text-white leading-[1.1em] tracking-tight font-instrument-serif font-normal mt-8">
+                Production AI &amp;
+                <br />
+                <span className="italic text-white/70">Systems Engineering</span>
               </h2>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.15}>
-              <p className="text-[20px] min-[810px]:text-[22px] font-medium text-accent-purple-light leading-[28px] tracking-[-0.5px] mt-[15px] font-[family-name:var(--font-dm-sans)]">
-                Purpose Into Ideas!
-              </p>
-            </ScrollReveal>
-
             <ScrollReveal delay={0.2}>
-              <p className="text-[15px] min-[810px]:text-[16px] text-text-secondary leading-[26px] tracking-[-0.5px] mt-[20px] font-[family-name:var(--font-dm-sans)]">
+              <p className="text-[15px] text-white/60 leading-[26px] max-w-lg mt-6 font-sans">
                 From product engineering to AI automation — building reliable
-                systems that ship to production and scale.
+                systems that ship to production and scale. B.Tech in Computer
+                Science from United University (2024).
               </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.25}>
-              <p className="text-[13px] min-[810px]:text-[14px] text-text-muted leading-[22px] mt-[10px] font-[family-name:var(--font-dm-sans)]">
-                B.Tech in Computer Science from United University (2024).
-                Azure AI certified. GenAI Hackathon winner.
-              </p>
-            </ScrollReveal>
-
-            {/* Integration icons preview */}
-            <ScrollReveal delay={0.3}>
-              <div className="flex items-center gap-[10px] mt-[30px]">
-                {["/icons/integration-icon-1.svg", "/icons/integration-icon-2.svg", "/icons/integration-icon-3.svg", "/icons/integration-icon-4.svg"].map(
-                  (src, i) => (
-                    <div
-                      key={i}
-                      className="relative w-[40px] h-[40px] rounded-[10px] overflow-hidden border border-border-subtle bg-glass"
-                    >
-                      <Image
-                        src={src}
-                        alt="Integration"
-                        fill
-                        sizes="40px"
-                        className="object-cover"
-                      />
-                    </div>
-                  )
-                )}
-              </div>
             </ScrollReveal>
           </div>
 
-          {/* Right - Labels */}
-          <div className="flex items-start justify-start min-[1200px]:justify-end">
+          <div className="flex items-start">
             <ScrollReveal delay={0.2}>
-              <div className="flex gap-[10px]">
-                <span className="inline-flex items-center px-[16px] py-[6px] rounded-[30px] border border-border-subtle bg-glass text-[12px] font-medium text-accent-blue font-[family-name:var(--font-dm-sans)]">
+              <div className="flex gap-2">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full ring-1 ring-white/10 bg-white/5 text-[12px] font-medium text-white/70 font-sans">
                   Automation
                 </span>
-                <span className="inline-flex items-center px-[16px] py-[6px] rounded-[30px] border border-border-subtle bg-glass text-[12px] font-medium text-text-secondary font-[family-name:var(--font-dm-sans)]">
-                  Experience
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full ring-1 ring-white/10 bg-white/5 text-[12px] font-medium text-white/70 font-sans">
+                  Engineering
                 </span>
               </div>
             </ScrollReveal>
@@ -84,7 +49,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Experience Cards */}
-        <div className="mt-[50px] flex flex-col gap-[20px]">
+        <div className="mt-12 flex flex-col gap-4">
           {experiences.map((exp, index) => (
             <ScrollReveal key={exp.company} delay={index * 0.1}>
               <ExperienceCard
@@ -101,9 +66,10 @@ export default function ExperienceSection() {
 
         {/* CTA */}
         <ScrollReveal delay={0.3}>
-          <div className="mt-[40px] flex justify-center">
-            <Button href="https://Wa.me/+919335963562" variant="primary">
+          <div className="mt-10 flex justify-center">
+            <Button href="https://Wa.me/+919335963562" variant="outline">
               Book an Appointment
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </Button>
           </div>
         </ScrollReveal>

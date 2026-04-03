@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useSpring, useMotionValue, useTransform } from "framer-motion";
+import { useInView, useSpring, useMotionValue, useTransform } from "framer-motion";
 import { stats } from "@/lib/data";
 import { useEffect } from "react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -31,7 +31,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   return (
     <span
       ref={ref}
-      className="text-[40px] min-[810px]:text-[54px] font-bold text-white leading-[1em] tracking-[-2px] font-[family-name:var(--font-afacad-flux)]"
+      className="text-[36px] min-[810px]:text-[48px] font-normal text-white leading-[1em] tracking-tight font-instrument-serif"
     >
       0{suffix}
     </span>
@@ -41,13 +41,13 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 export default function StatsSection() {
   return (
     <section className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-[1300px] px-[20px] min-[810px]:px-[30px]">
+      <div className="mx-auto max-w-5xl px-6">
         <ScrollReveal>
-          <div className="grid grid-cols-2 min-[810px]:grid-cols-4 gap-[30px] min-[810px]:gap-[40px]">
+          <div className="grid grid-cols-2 min-[810px]:grid-cols-4 gap-8 min-[810px]:gap-10 py-10 border-y border-white/10">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="text-[13px] min-[810px]:text-[14px] text-text-muted mt-[8px] font-[family-name:var(--font-dm-sans)]">
+                <p className="text-[13px] text-white/50 mt-2 font-sans">
                   {stat.label}
                 </p>
               </div>

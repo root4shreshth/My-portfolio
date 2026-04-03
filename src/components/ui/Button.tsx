@@ -21,15 +21,15 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center gap-2 font-[family-name:var(--font-dm-sans)] font-medium text-[16px] leading-[26px] tracking-[-0.5px] rounded-[10px] transition-all duration-300 cursor-pointer";
+    "inline-flex items-center gap-2 font-sans font-medium text-[14px] rounded-full transition-all duration-300 cursor-pointer";
 
   const variants = {
     primary:
-      "bg-accent-purple text-white px-[18px] py-[10px] hover:brightness-125 purple-glow",
+      "bg-white text-neutral-900 px-5 py-3 hover:bg-white/90",
     outline:
-      "border border-border-medium text-white px-[18px] py-[10px] bg-transparent hover:bg-glass-hover hover:border-border-hover",
+      "bg-white/10 text-white px-5 py-3 ring-1 ring-white/15 hover:bg-white/15",
     ghost:
-      "text-text-secondary hover:text-white px-[16px] py-[8px] bg-transparent",
+      "text-white/80 hover:text-white px-4 py-2 bg-transparent",
   };
 
   const Component = href ? "a" : "button";
