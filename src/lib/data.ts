@@ -8,31 +8,32 @@ export const navLinks = [
 
 export const projects = [
   {
+    title: "Sellixis",
+    subtitle: "AI Sales Operating System",
+    description:
+      "AI-powered sales OS that talks, qualifies, and follows up with every lead — 24/7, across every channel. Zero missed leads, zero cold follow-ups.",
+    image: "/images/project-1.png",
+    link: "",
+    details: [
+      "Multi-channel AI agents deployed on website chat, WhatsApp, Instagram, and phone — handling unlimited concurrent conversations with auto voice calling for high-intent leads.",
+      "BANT scoring, intent analysis, and sentiment detection identify high-value prospects automatically. Cross-channel memory ensures seamless continuity across touchpoints.",
+      "0s response time, 3x more qualified leads reaching closers, 70% less manual follow-up through automated multi-channel workflows.",
+    ],
+    tech: ["Voice AI", "LLMs", "WhatsApp API", "BANT Scoring", "CRM Sync", "Twilio"],
+    year: "2025",
+  },
+  {
     title: "CARA",
     subtitle: "AI Clinical Intake & Triage System",
     description:
       "Clinical intake pipeline using an ADK-style agent architecture to turn patient voice and documents into structured symptoms, triage decisions, and care-plan actions.",
-    image: "/images/project-1.png",
+    image: "/images/project-2.png",
     link: "",
     details: [
       "Built agents for voice intake, symptom reasoning, document OCR, triage, and care-plan generation with strict JSON contracts, retries, and full audit logging.",
       "Cut mock intake-to-plan time by 70% vs manual workflows while producing consistent summaries, instructions, and system actions.",
     ],
     tech: ["Python", "ADK Agents", "OCR", "LLMs", "JSON Contracts"],
-    year: "2025",
-  },
-  {
-    title: "LeadFlow AI",
-    subtitle: "Chat + Voice Lead Automation",
-    description:
-      "End-to-end lead pipeline: ad leads \u2192 Google Sheets \u2192 Telegram chatbot \u2192 Voice AI agent for qualifying prospects and auto-booking meetings.",
-    image: "/images/project-2.png",
-    link: "https://primerestate.netlify.app/",
-    details: [
-      "Built realtime voice flows with Twilio, Whisper/Groq, and LLMs to qualify prospects, answer FAQs, and auto-book meetings via the Calendar API — cutting manual scheduling by ~80%.",
-      "Added CRM sync, confirmations, and notification automation with fallback paths for unqualified leads to keep the funnel clean and reliable.",
-    ],
-    tech: ["Twilio", "Whisper", "Groq", "LLMs", "Google Sheets", "Calendar API"],
     year: "2025",
   },
   {
@@ -90,9 +91,9 @@ export const skillTags = [
 ];
 
 export const stats = [
-  { value: 80, suffix: "%", label: "Manual Handoffs Reduced" },
+  { value: 78, suffix: "%", label: "Leads Convert to First Responder" },
   { value: 70, suffix: "%", label: "Intake Time Cut (CARA)" },
-  { value: 5, suffix: "+", label: "Production AI Systems" },
+  { value: 3, suffix: "x", label: "More Qualified Leads (Sellixis)" },
   { value: 24, suffix: "/7", label: "AI Agent Uptime" },
 ];
 

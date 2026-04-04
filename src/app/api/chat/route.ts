@@ -55,22 +55,24 @@ EXPERIENCE
 PROJECTS
 ═══════════════════════════════════════
 
-1. CARA — AI Clinical Intake & Triage System (2025)
+1. Sellixis — AI Sales Operating System (2025) [Flagship Project]
+   - AI-powered sales OS that talks, qualifies, and follows up with every lead 24/7
+   - Multi-channel: website chat, WhatsApp, Instagram, phone — all handled simultaneously
+   - Auto voice calling for high-intent leads with full conversation context
+   - BANT scoring (Budget, Authority, Need, Timeline), intent analysis, sentiment detection
+   - Cross-channel memory: lead chats on Instagram then calls in — Sellixis remembers everything
+   - Seamless human handoff with full conversation history, sentiment, and next-step recommendations
+   - Impact: 0s response time, 3x more qualified leads, 70% less manual follow-up, 100% personalized
+   - 78% of leads buy from the FIRST responder — Sellixis ensures you're always first
+   - Tech: Voice AI, LLMs, WhatsApp API, BANT Scoring, CRM Sync, Twilio
+
+2. CARA — AI Clinical Intake & Triage System (2025)
    - Clinical intake pipeline using ADK-style agent architecture
    - Turns patient voice and documents into structured symptoms, triage decisions, care-plan actions
    - Built agents for: voice intake, symptom reasoning, document OCR, triage, care-plan generation
    - Strict JSON contracts, retries, full audit logging
    - Cut mock intake-to-plan time by 70% vs manual workflows
    - Tech: Python, ADK Agents, OCR, LLMs, JSON Contracts
-
-2. LeadFlow AI — Chat + Voice Lead Automation System (2025) [Has Live Demo]
-   - End-to-end lead pipeline: ad leads → Google Sheets → Telegram chatbot → Voice AI agent
-   - Realtime voice flows with Twilio, Whisper/Groq, and LLMs
-   - Qualifies prospects, answers FAQs, auto-books meetings via Calendar API
-   - Cut manual scheduling by ~80%
-   - CRM sync, confirmations, notification automation, fallback paths
-   - Demo: primerestate.netlify.app
-   - Tech: Twilio, Whisper, Groq, LLMs, Google Sheets, Calendar API
 
 3. Heisyn — Branding & Automation Agency Website (2025) [Live at heisyn.com]
    - Responsive agency site showcasing branding and automation services for SMBs
