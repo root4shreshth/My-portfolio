@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function Footer() {
   return (
     <footer id="contact" className="relative w-full pt-[60px] min-[810px]:pt-[80px] pb-[30px] min-[810px]:pb-[40px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <ScrollReveal>
           <div className="grid grid-cols-1 min-[810px]:grid-cols-3 gap-10 min-[810px]:gap-12">
             {/* Left - CTA */}

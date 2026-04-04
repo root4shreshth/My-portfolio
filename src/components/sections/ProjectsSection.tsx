@@ -10,7 +10,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         {/* Header */}
         <ScrollReveal>
           <SectionLabel text="Projects" />

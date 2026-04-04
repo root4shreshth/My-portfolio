@@ -9,7 +9,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function ExperienceSection() {
   return (
     <section id="experience" className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         {/* Header */}
         <div className="grid grid-cols-1 min-[1200px]:grid-cols-[1fr_auto] gap-10">
           <div>

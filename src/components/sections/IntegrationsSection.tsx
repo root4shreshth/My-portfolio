@@ -18,7 +18,7 @@ const integrationIcons = [
 export default function IntegrationsSection() {
   return (
     <section className="relative w-full py-[60px] min-[810px]:py-[80px] overflow-hidden">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <div className="relative rounded-2xl ring-1 ring-white/10 overflow-hidden min-h-[400px] min-[810px]:min-h-[500px]">
           {/* Background */}
           <div className="absolute inset-0 z-0">

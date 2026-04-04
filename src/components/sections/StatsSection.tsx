@@ -41,7 +41,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 export default function StatsSection() {
   return (
     <section className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <ScrollReveal>
           <div className="grid grid-cols-2 min-[810px]:grid-cols-4 gap-8 min-[810px]:gap-10 py-10 border-y border-white/10">
             {stats.map((stat) => (

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif, Inter } from "next/font/google";
 import { Afacad_Flux } from "next/font/google";
 import "./globals.css";
+import { LenisProvider } from "@/lib/lenis-provider";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -120,7 +121,9 @@ export default function RootLayout({
         <a href="#main-content" className="skip-nav">
           Skip to main content
         </a>
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

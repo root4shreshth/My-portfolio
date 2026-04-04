@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function AboutSection() {
   return (
     <section id="about" className="relative w-full py-[80px] min-[1200px]:py-[100px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <ScrollReveal>
           <SectionLabel text="About" />
         </ScrollReveal>

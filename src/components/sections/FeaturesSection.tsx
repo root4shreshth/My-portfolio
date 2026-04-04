@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 export default function FeaturesSection() {
   return (
     <section className="relative w-full py-[60px] min-[810px]:py-[80px]">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-10">
         <div className="relative rounded-2xl ring-1 ring-white/10 overflow-hidden">
           {/* Background image */}
           <div className="absolute inset-0 z-0">
