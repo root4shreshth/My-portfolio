@@ -37,31 +37,32 @@ export const projects = [
     year: "2025",
   },
   {
+    title: "PaySense AI",
+    subtitle: "Voice-First Cash Flow Intelligence for Merchants",
+    description:
+      "Voice-first cash flow intelligence platform for India\u2019s 4Cr+ Paytm merchants \u2014 AI that predicts, alerts, and scores to solve the \u20B920-25L Cr MSME credit gap.",
+    image: "/images/project-3.png",
+    link: "",
+    details: [
+      "Prophet-based ML engine delivering 30-day cash flow forecasts with 86% accuracy on 7-day predictions. Smart nudges (festival stock-up, overdue receivables, surplus investment) via WhatsApp with 97% open rates.",
+      "Transparent CashFlow Score (0-900) that gamifies financial health and unlocks pre-approved loans at 750+. OECD research shows this increases financial inclusion by 35-40%.",
+      "Payment Guardian monitors UPI and card health in real-time, alerting merchants before outages cost revenue. Voice-first in Hindi & English as a PWA \u2014 zero Play Store friction.",
+    ],
+    tech: ["Prophet ML", "Voice AI", "PWA", "WhatsApp API", "UPI", "Hindi NLP"],
+    year: "2025",
+  },
+  {
     title: "Heisyn",
     subtitle: "Branding & Automation Agency Website",
     description:
       "Responsive agency site for heisyn.com showcasing branding and automation-driven services for SMBs.",
-    image: "/images/project-3.png",
+    image: "/images/project-4.png",
     link: "https://heisyn.com",
     details: [
       "Implemented lead capture, case studies, demo scheduling, and automated contact flows; synced form leads to CRM via serverless API and n8n/Zapier hooks.",
       "Included tracking, form validation, and automated campaign triggers for end-to-end marketing automation.",
     ],
     tech: ["Next.js", "React", "Tailwind CSS", "n8n", "Zapier", "Serverless"],
-    year: "2025",
-  },
-  {
-    title: "SourceSync",
-    subtitle: "Multisource News Collector",
-    description:
-      "Browser extension + web app that pulls the same story from multiple outlets, merges key points, and generates a unified summary.",
-    image: "/images/project-4.png",
-    link: "",
-    details: [
-      "Added offline save (IndexedDB), page history, per-page personalized chatbot (RAG + embeddings), and a bias indicator highlighting political or ideological skew across sources.",
-      "Built with Node.js, Next.js, PDFKit, and lightweight ML classifiers; designed to reduce tab-clutter and speed research for students, analysts, and developers.",
-    ],
-    tech: ["Node.js", "Next.js", "RAG", "Embeddings", "PDFKit", "IndexedDB"],
     year: "2025",
   },
 ];

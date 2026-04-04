@@ -74,21 +74,25 @@ PROJECTS
    - Cut mock intake-to-plan time by 70% vs manual workflows
    - Tech: Python, ADK Agents, OCR, LLMs, JSON Contracts
 
-3. Heisyn — Branding & Automation Agency Website (2025) [Live at heisyn.com]
+3. PaySense AI — Voice-First Cash Flow Intelligence for Merchants (2025) [Hackathon Winner]
+   - Voice-first cash flow intelligence platform for India's 4Cr+ Paytm merchants
+   - Solves the ₹20-25 Lakh Crore MSME credit gap (70% of Indian SMBs fail due to cash flow mismanagement)
+   - Prophet-based ML engine: 30-day cash flow forecasts with 86% accuracy on 7-day predictions
+   - Smart nudges via WhatsApp (97% open rates): festival stock-up reminders, overdue receivable alerts, surplus investment suggestions
+   - Transparent CashFlow Score (0-900): gamifies financial health, unlocks pre-approved loans at 750+
+   - Payment Guardian: real-time UPI/card health monitoring, alerts merchants before outages cost revenue
+   - Voice-first in Hindi and English, removing literacy barrier entirely
+   - Runs as a PWA — installable from browser, zero Play Store dependency
+   - Won GenAI Hackathon 2025 — 3rd Position
+   - Tech: Prophet ML, Voice AI, PWA, WhatsApp API, UPI monitoring, Hindi NLP
+
+4. Heisyn — Branding & Automation Agency Website (2025) [Live at heisyn.com]
    - Responsive agency site showcasing branding and automation services for SMBs
    - Lead capture, case studies, demo scheduling, automated contact flows
    - Synced form leads to CRM via serverless API and n8n/Zapier hooks
    - Tech: Next.js, React, Tailwind CSS, n8n, Zapier, Serverless
 
-4. SourceSync — Multisource News Collector (2025) [Has Demo]
-   - Browser extension + web app
-   - Pulls same story from multiple outlets, merges key points, generates unified summary
-   - One-click PDF export
-   - Offline save (IndexedDB), page history, per-page personalized chatbot (RAG + embeddings)
-   - Bias indicator highlighting political/ideological skew across sources
-   - Tech: Node.js, Next.js, RAG, Embeddings, PDFKit, IndexedDB
-
-5. Other Projects: Live Data Tracker, Lead Scraper Tool, Auto Workflow Maker
+5. Other Projects: Live Data Tracker, Lead Scraper Tool, Auto Workflow Maker, SourceSync (Multisource News Collector)
 
 ═══════════════════════════════════════
 TECHNICAL SKILLS
