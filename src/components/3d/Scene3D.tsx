@@ -26,7 +26,10 @@ export default function Scene3D() {
   return (
     <div className="fixed inset-0 z-0" style={{ background: "#09090b" }}>
       <Canvas
-        camera={{ position: [0, 1, 8], fov: 50 }}
+        camera={{
+          position: isMobile ? [0, 1, 10] : [0, 1, 8],
+          fov: isMobile ? 55 : 50,
+        }}
         dpr={isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5)}
         gl={{
           antialias: !isMobile,
@@ -47,7 +50,8 @@ export default function Scene3D() {
 
         <Suspense fallback={null}>
           <Environment preset="night" />
-          <ParticleField count={isMobile ? 80 : 200} />
+          <ParticleField count={isMobile ? 60 : 200} />
+          {/* Model renders on ALL devices — mobile gets reduced particles + no post-processing */}
           <CyborgModel />
           <ScrollCamera />
           {!isMobile && <PostEffects />}

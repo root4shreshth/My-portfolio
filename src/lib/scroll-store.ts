@@ -7,3 +7,9 @@ export const scrollState = {
   direction: 1,   // 1 = down, -1 = up
   y: 0,           // raw scroll Y position
 };
+
+// Model loading state — shared between preloader and scene
+export const modelState = {
+  loaded: false,
+  progress: 0,
+};
