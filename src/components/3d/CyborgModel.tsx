@@ -68,7 +68,7 @@ export default function CyborgModel() {
     const sp = scrollState.progress;
 
     // Idle bob
-    const baseY = isMobile ? -9.5 : -8.5;
+    const baseY = isMobile ? -4.5 : -8.5;
     groupRef.current.position.y = baseY + Math.sin(time * 0.4) * 0.05;
 
     // Mouse follow — base facing left
