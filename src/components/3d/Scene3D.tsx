@@ -7,6 +7,7 @@ import ParticleField from "./ParticleField";
 import ScrollCamera from "./ScrollCamera";
 import CyborgModel from "./CyborgModel";
 import PostEffects from "./PostEffects";
+import SceneLoader from "./SceneLoader";
 
 export default function Scene3D() {
   const [isMobile, setIsMobile] = useState(false);
@@ -48,14 +49,21 @@ export default function Scene3D() {
         <pointLight position={[0, -2, 3]} intensity={0.5} color="#ff3333" distance={12} />
         <spotLight position={[0, 8, 4]} intensity={1.5} angle={0.5} penumbra={0.8} color="#ffffff" />
 
+        {/* SceneLoader: tracks real download progress → writes to modelState */}
+        <SceneLoader />
+
+        {/* Particles load instantly (no heavy assets) */}
+        <ParticleField count={isMobile ? 60 : 200} />
+        <ScrollCamera />
+
+        {/* CyborgModel wrapped in Suspense — starts downloading immediately
+            when Canvas mounts (which happens BEHIND the preloader) */}
         <Suspense fallback={null}>
           <Environment preset="night" />
-          <ParticleField count={isMobile ? 60 : 200} />
-          {/* Model renders on ALL devices — mobile gets reduced particles + no post-processing */}
           <CyborgModel />
-          <ScrollCamera />
-          {!isMobile && <PostEffects />}
         </Suspense>
+
+        {!isMobile && <PostEffects />}
       </Canvas>
     </div>
   );
