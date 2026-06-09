@@ -40,7 +40,7 @@ const commands: CommandItem[] = [
   {
     id: "projects",
     label: "View Projects",
-    description: "CARA, LeadFlow, Heisyn, SourceSync",
+    description: "Sellixis, Praetor, SmartCap",
     icon: "🚀",
     action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
     keywords: ["projects", "work", "cara", "leadflow", "heisyn", "sourcesync", "portfolio"],

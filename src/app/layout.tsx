@@ -31,34 +31,34 @@ const afacadFlux = Afacad_Flux({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hype4shreshth.framer.website"),
-  title: "Shreshth Srivastava | Automation Engineer",
+  title: "Shreshth Srivastava | AI Product Engineer",
   description:
-    "Automation Engineer building production-grade AI systems — LLMs, real-time speech pipelines, and cloud APIs to automate lead qualification, customer engagement, and data workflows.",
+    "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines. Full 0-to-1 lifecycle across product design, backend engineering, AI integration, and deployment.",
   keywords: [
-    "Automation Engineer",
-    "AI Systems",
-    "LLM",
+    "AI Product Engineer",
+    "LLMs",
+    "Agentic Systems",
     "Voice AI",
-    "Workflow Automation",
     "Product Engineer",
     "Shreshth Srivastava",
     "React",
     "Next.js",
+    "TypeScript",
   ],
   authors: [{ name: "Shreshth Srivastava" }],
   openGraph: {
-    title: "Shreshth Srivastava | Automation Engineer",
+    title: "Shreshth Srivastava | AI Product Engineer",
     description:
-      "Automation Engineer building production-grade AI systems with LLMs, speech pipelines, and cloud APIs.",
+      "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
     images: [{ url: "/images/og-image.png", width: 1200, height: 630 }],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shreshth Srivastava | Automation Engineer",
+    title: "Shreshth Srivastava | AI Product Engineer",
     description:
-      "Automation Engineer building production-grade AI systems with LLMs, speech pipelines, and cloud APIs.",
+      "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
     images: ["/images/og-image.png"],
     creator: "@Rootshreshth",
   },
@@ -76,7 +76,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Shreshth Srivastava",
-  jobTitle: "Automation Engineer",
+  jobTitle: "AI Product Engineer",
   url: "https://hype4shreshth.framer.website",
   sameAs: [
     "https://x.com/Rootshreshth",
@@ -85,22 +85,23 @@ const jsonLd = {
   ],
   knowsAbout: [
     "Artificial Intelligence",
-    "Workflow Automation",
+    "Agentic Systems",
     "Voice AI",
     "LLMs",
-    "RAG Pipelines",
+    "Product Engineering",
     "React",
     "Next.js",
     "Python",
-    "Node.js",
+    "TypeScript",
     "Docker",
+    "Kubernetes",
   ],
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "United University",
   },
   description:
-    "Automation Engineer building production-grade AI systems that integrate LLMs, real-time speech pipelines, and cloud APIs.",
+    "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
 };
 
 export default function RootLayout({

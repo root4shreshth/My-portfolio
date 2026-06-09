@@ -11,58 +11,44 @@ export const projects = [
     title: "Sellixis",
     subtitle: "AI Sales Operating System",
     description:
-      "AI-powered sales OS that talks, qualifies, and follows up with every lead — 24/7, across every channel. Zero missed leads, zero cold follow-ups.",
+      "Autonomous 24×7 AI Sales OS that automates end-to-end sales pipelines with near-zero human intervention, engaging leads instantly across WhatsApp, Instagram, and Facebook.",
     image: "/images/project-1.png",
     link: "",
     details: [
-      "Multi-channel AI agents deployed on website chat, WhatsApp, Instagram, and phone — handling unlimited concurrent conversations with auto voice calling for high-intent leads.",
-      "BANT scoring, intent analysis, and sentiment detection identify high-value prospects automatically. Cross-channel memory ensures seamless continuity across touchpoints.",
-      "0s response time, 3x more qualified leads reaching closers, 70% less manual follow-up through automated multi-channel workflows.",
+      "Designed an AI voice calling agent that auto-qualifies leads, handles objections, and books meetings and appointments directly into business calendars, reducing manual sales work by 80%.",
+      "Architected a unified multichannel orchestration layer with LLMs, real-time speech pipelines, and CRM integrations, delivering full sales automation at 60% lower cost than competing solutions.",
     ],
-    tech: ["Voice AI", "LLMs", "WhatsApp API", "BANT Scoring", "CRM Sync", "Twilio"],
-    year: "2025",
+    tech: ["Voice AI", "LLMs", "WhatsApp API", "CRM Sync", "Twilio", "Real-time Speech"],
+    year: "2025 – Present",
   },
   {
-    title: "CARA",
-    subtitle: "AI Clinical Intake & Triage System",
+    title: "Praetor",
+    subtitle: "Autonomous AI Incident Commander",
     description:
-      "Clinical intake pipeline using an ADK-style agent architecture to turn patient voice and documents into structured symptoms, triage decisions, and care-plan actions.",
+      "Autonomous SRE / DevOps agent that investigates incidents, decides remediations via a trained policy, executes through a Backend Protocol, and escalates to code-level investigation when runtime ops are insufficient.",
     image: "/images/project-2.png",
     link: "",
     details: [
-      "Built agents for voice intake, symptom reasoning, document OCR, triage, and care-plan generation with strict JSON contracts, retries, and full audit logging.",
-      "Cut mock intake-to-plan time by 70% vs manual workflows while producing consistent summaries, instructions, and system actions.",
+      "Built an autonomous agent with a typed 10-action vocabulary that investigates incidents, decides remediations, executes fixes, verifies recovery, and escalates to tier-2 code investigation when needed.",
+      "Shipped the first OpenEnv-compatible environment for SRE / DevOps — simulator, curriculum, training pipeline, sim-to-real bridge, tier-2 code escalation, autonomous webhook ingestion, and post-mortem writer.",
+      "Designed strict JSON action contracts, retries, and full audit logging across the agent loop for reproducible, observable, and production-safe autonomous remediation.",
     ],
-    tech: ["Python", "ADK Agents", "OCR", "LLMs", "JSON Contracts"],
+    tech: ["Python", "Agentic AI", "JSON Contracts", "DevOps", "OpenEnv"],
     year: "2025",
   },
   {
-    title: "PaySense AI",
-    subtitle: "Voice-First Cash Flow Intelligence for Merchants",
+    title: "SmartCap",
+    subtitle: "AI Cervical Posture Predictor (IoT + Mobile App)",
     description:
-      "Voice-first cash flow intelligence platform for India\u2019s 4Cr+ Paytm merchants \u2014 AI that predicts, alerts, and scores to solve the \u20B920-25L Cr MSME credit gap.",
+      "IoT wearable integrating ESP32-C3, MPU-6050 IMU, and BLE that continuously tracks cervical posture and alerts the user through haptic vibration and a companion mobile app.",
     image: "/images/project-3.png",
     link: "",
     details: [
-      "Prophet-based ML engine delivering 30-day cash flow forecasts with 86% accuracy on 7-day predictions. Smart nudges (festival stock-up, overdue receivables, surplus investment) via WhatsApp with 97% open rates.",
-      "Transparent CashFlow Score (0-900) that gamifies financial health and unlocks pre-approved loans at 750+. OECD research shows this increases financial inclusion by 35-40%.",
-      "Payment Guardian monitors UPI and card health in real-time, alerting merchants before outages cost revenue. Voice-first in Hindi & English as a PWA \u2014 zero Play Store friction.",
+      "Built a wearable device with ESP32-C3, MPU-6050 IMU, and BLE for continuous cervical posture tracking with haptic vibration alerts and a companion mobile app.",
+      "Trained a gradient boosting classifier on real-time IMU data to predict posture quality and forecast potential cervical health risks, including likely body issues and estimated onset timeline.",
+      "Filed an Indian patent for the device and delivered the full product package including research documentation, system architecture, and an investor-ready pitch deck.",
     ],
-    tech: ["Prophet ML", "Voice AI", "PWA", "WhatsApp API", "UPI", "Hindi NLP"],
-    year: "2025",
-  },
-  {
-    title: "Heisyn",
-    subtitle: "Branding & Automation Agency Website",
-    description:
-      "Responsive agency site for heisyn.com showcasing branding and automation-driven services for SMBs.",
-    image: "/images/project-4.png",
-    link: "https://heisyn.com",
-    details: [
-      "Implemented lead capture, case studies, demo scheduling, and automated contact flows; synced form leads to CRM via serverless API and n8n/Zapier hooks.",
-      "Included tracking, form validation, and automated campaign triggers for end-to-end marketing automation.",
-    ],
-    tech: ["Next.js", "React", "Tailwind CSS", "n8n", "Zapier", "Serverless"],
+    tech: ["ESP32-C3", "IoT", "BLE", "ML", "Mobile App", "Patent Filed"],
     year: "2025",
   },
 ];
@@ -75,47 +61,48 @@ export const otherProjects = [
 
 export const skillTags = [
   "Python",
+  "TypeScript",
   "Node.js",
   "LLMs",
-  "RAG Pipelines",
+  "Voice AI",
   "React",
   "Next.js",
   "Tailwind CSS",
   "FastAPI",
   "Docker",
-  "n8n",
-  "Zapier",
-  "Prompt Engineering",
-  "Workflow Orchestration",
-  "REST APIs",
+  "Kubernetes",
+  "Azure",
+  "PostgreSQL",
+  "Supabase",
   "Twilio",
+  "Prompt Engineering",
+  "REST APIs",
 ];
 
 export const stats = [
-  { value: 78, suffix: "%", label: "Leads Convert to First Responder" },
-  { value: 70, suffix: "%", label: "Intake Time Cut (CARA)" },
-  { value: 3, suffix: "x", label: "More Qualified Leads (Sellixis)" },
+  { value: 80, suffix: "%", label: "Manual Sales Work Reduced (Sellixis)" },
+  { value: 60, suffix: "%", label: "Lower Cost vs Competitors (Sellixis)" },
+  { value: 80, suffix: "%", label: "Manual Handoffs Cut (Vernika)" },
   { value: 24, suffix: "/7", label: "AI Agent Uptime" },
 ];
 
 export const experiences = [
   {
-    role: "Product Engineer Intern",
+    role: "Product Engineer",
     company: "Concept2Action (C2A)",
-    type: "Remote, USA \u2014 2026",
+    type: "Remote, USA — 2026",
     description:
-      "Building and shipping production-level products from concept to deployment, contributing directly to live systems. Collaborating with product, design, and engineering teams to implement features, improve system reliability, and maintain clean, scalable codebases across the full development lifecycle.",
-    tags: ["Product Engineering", "Full-Stack"],
+      "Designing and shipping production-grade AI products end-to-end, owning concept, architecture, implementation, and deployment for live systems. Built and scaled Sellixis, an AI Sales Operating System automating end-to-end sales across WhatsApp, Instagram, Facebook, and AI voice channels.",
+    tags: ["Product Engineering", "AI Products", "Full-Stack"],
     label: "Current",
   },
   {
-    role: "AI Automation Intern",
+    role: "AI Automation Engineer Intern",
     company: "Pitch X",
-    type: "Remote \u2014 2025",
+    type: "Remote — 2025",
     description:
       "Cut manual handoffs by 80% by building Vernika, a production voice-calling SaaS with Twilio + LLM-driven IVR. Engineered low-latency streaming speech pipelines (Whisper/Groq) with API orchestration, monitoring, and confidence scoring.",
     tags: ["Voice AI", "Twilio", "LLMs"],
-    label: "Guide",
   },
 ];
 
@@ -123,14 +110,15 @@ export const education = {
   institution: "United University",
   location: "Prayagraj, UP",
   degree: "B.Tech, Computer Science and Engineering",
-  year: "2024",
+  year: "2024 – 2028",
 };
 
 export const achievements = [
-  "Won GenAI Hackathon 2025 \u2014 Secured 3rd Position",
+  "Top 100 out of 70,000+ teams in a national-level hackathon",
+  "Won GenAI Hackathon 2025",
   "Microsoft Certified: Azure AI Fundamentals (AI-900)",
   "Google Cloud Fundamentals: AI Automation Learning (Coursera)",
-  "Internship Certification \u2014 AI Automation Intern at Pitch X",
+  "AI Automation Intern — Pitch X (2025)",
 ];
 
 export const socialLinks = [

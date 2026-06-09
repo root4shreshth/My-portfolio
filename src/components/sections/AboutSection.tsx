@@ -17,9 +17,9 @@ export default function AboutSection() {
           <ScrollReveal delay={0.1}>
             <h2 className="text-[28px] min-[810px]:text-[36px] min-[1200px]:text-[42px] text-white leading-[1.25em] tracking-tight font-instrument-serif font-normal">
               <span className="text-white/50">
-                Automation Engineer specialized in designing end-to-end solutions
+                AI Product Engineer who ships production-grade AI products
               </span>{" "}
-              that integrate LLMs, real-time speech pipelines, and cloud APIs to automate lead qualification, customer engagement, and data workflows.
+              powered by LLMs, agentic systems, and real-time voice pipelines. Owns the full 0-to-1 lifecycle across product design, backend engineering, AI integration, and deployment.
             </h2>
 
             <div className="mt-8">
