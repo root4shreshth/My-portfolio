@@ -31,15 +31,15 @@ const afacadFlux = Afacad_Flux({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hype4shreshth.framer.website"),
-  title: "Shreshth Srivastava | AI Product Engineer",
+  title: "Shreshth Srivastava | AI Engineer",
   description:
-    "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines. Full 0-to-1 lifecycle across product design, backend engineering, AI integration, and deployment.",
+    "AI Engineer who takes systems from prototype to production. Experienced across enterprise workflow automation, real-time voice AI, and autonomous agents. Patent holder and two-time hackathon winner.",
   keywords: [
-    "AI Product Engineer",
+    "AI Engineer",
     "LLMs",
     "Agentic Systems",
     "Voice AI",
-    "Product Engineer",
+    "SAP Business One",
     "Shreshth Srivastava",
     "React",
     "Next.js",
@@ -47,18 +47,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shreshth Srivastava" }],
   openGraph: {
-    title: "Shreshth Srivastava | AI Product Engineer",
+    title: "Shreshth Srivastava | AI Engineer",
     description:
-      "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
+      "AI Engineer who takes systems from prototype to production: backend architecture, LLM and agent design, deployment, and monitoring. Patent holder and two-time hackathon winner.",
     images: [{ url: "/images/og-image.png", width: 1200, height: 630 }],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shreshth Srivastava | AI Product Engineer",
+    title: "Shreshth Srivastava | AI Engineer",
     description:
-      "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
+      "AI Engineer who takes systems from prototype to production: backend architecture, LLM and agent design, deployment, and monitoring. Patent holder and two-time hackathon winner.",
     images: ["/images/og-image.png"],
     creator: "@Rootshreshth",
   },
@@ -76,7 +76,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Shreshth Srivastava",
-  jobTitle: "AI Product Engineer",
+  jobTitle: "AI Engineer",
   url: "https://hype4shreshth.framer.website",
   sameAs: [
     "https://x.com/Rootshreshth",
@@ -88,7 +88,8 @@ const jsonLd = {
     "Agentic Systems",
     "Voice AI",
     "LLMs",
-    "Product Engineering",
+    "SAP Business One",
+    "Enterprise Automation",
     "React",
     "Next.js",
     "Python",
@@ -101,7 +102,7 @@ const jsonLd = {
     name: "United University",
   },
   description:
-    "AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.",
+    "AI Engineer who takes systems from prototype to production: backend architecture, LLM and agent design, deployment, and monitoring. Patent holder and two-time hackathon winner.",
 };
 
 export default function RootLayout({

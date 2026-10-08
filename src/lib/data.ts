@@ -8,47 +8,59 @@ export const navLinks = [
 
 export const projects = [
   {
-    title: "Sellixis",
-    subtitle: "AI Sales Operating System",
+    title: "Enterprise Operations Platform",
+    subtitle: "Next.js + SAP Business One",
     description:
-      "Autonomous 24×7 AI Sales OS that automates end-to-end sales pipelines with near-zero human intervention, engaging leads instantly across WhatsApp, Instagram, and Facebook.",
+      "Four modules — KYC onboarding, PO automation, card reconciliation, inventory portal — on Next.js 14 and Supabase, wired to SAP via the Service Layer REST API.",
     image: "/images/project-1.png",
     link: "",
     details: [
-      "Designed an AI voice calling agent that auto-qualifies leads, handles objections, and books meetings and appointments directly into business calendars, reducing manual sales work by 80%.",
-      "Architected a unified multichannel orchestration layer with LLMs, real-time speech pipelines, and CRM integrations, delivering full sales automation at 60% lower cost than competing solutions.",
+      "Built four production modules covering KYC onboarding, purchase order automation, card reconciliation, and inventory portal on Next.js 14 and Supabase, integrated with SAP via the Service Layer REST API.",
+      "Agentic pipeline extracts contracts from procurement email, auto-fills forms, and runs compliance checks behind dual approval gates.",
     ],
-    tech: ["Voice AI", "LLMs", "WhatsApp API", "CRM Sync", "Twilio", "Real-time Speech"],
+    tech: ["Next.js", "Supabase", "SAP B1", "Agentic AI", "REST API", "TypeScript"],
     year: "2025 – Present",
+  },
+  {
+    title: "SmartCap",
+    subtitle: "AI Cervical Posture Predictor (IoT + Mobile)",
+    description:
+      "ESP32-C3 wearable with IMU and BLE that flags poor cervical posture via haptic alerts and a paired mobile app. Granted an Indian patent and published.",
+    image: "/images/project-3.png",
+    link: "",
+    details: [
+      "Built an IoT wearable with ESP32-C3, MPU-6050 IMU, and BLE for continuous cervical posture tracking with haptic vibration alerts and a companion mobile app.",
+      "Gradient boosting model scores posture from live IMU data and projects a risk onset horizon; granted an Indian patent and published.",
+    ],
+    tech: ["ESP32-C3", "IoT", "BLE", "ML", "Mobile App", "Patent Granted"],
+    year: "2026",
+  },
+  {
+    title: "Sellixis",
+    subtitle: "AI Sales Automation System",
+    description:
+      "24×7 agent that works leads across WhatsApp, Instagram, and Facebook; voice agent qualifies, handles objections, and books meetings.",
+    image: "/images/project-2.png",
+    link: "",
+    details: [
+      "Built a 24×7 autonomous agent that works leads across WhatsApp, Instagram, and Facebook the moment they enter the funnel.",
+      "Voice agent auto-qualifies leads, handles objections, and books meetings. Cut manual sales work by 80% and runs at 60% lower cost than comparable tools.",
+    ],
+    tech: ["Voice AI", "LLMs", "WhatsApp API", "CRM Sync", "Twilio"],
+    year: "2026",
   },
   {
     title: "Praetor",
     subtitle: "Autonomous AI Incident Commander",
     description:
-      "Autonomous SRE / DevOps agent that investigates incidents, decides remediations via a trained policy, executes through a Backend Protocol, and escalates to code-level investigation when runtime ops are insufficient.",
-    image: "/images/project-2.png",
+      "Autonomous SRE agent that triages incidents with a typed 10-action vocabulary and picks remediations from a trained policy.",
+    image: "/images/project-4.png",
     link: "",
     details: [
-      "Built an autonomous agent with a typed 10-action vocabulary that investigates incidents, decides remediations, executes fixes, verifies recovery, and escalates to tier-2 code investigation when needed.",
-      "Shipped the first OpenEnv-compatible environment for SRE / DevOps — simulator, curriculum, training pipeline, sim-to-real bridge, tier-2 code escalation, autonomous webhook ingestion, and post-mortem writer.",
-      "Designed strict JSON action contracts, retries, and full audit logging across the agent loop for reproducible, observable, and production-safe autonomous remediation.",
+      "Built an autonomous SRE agent that triages incidents with a typed 10-action vocabulary and picks remediations from a trained policy.",
+      "First OpenEnv-compatible DevOps environment: simulator, curriculum, training pipeline, and sim-to-real bridge.",
     ],
-    tech: ["Python", "Agentic AI", "JSON Contracts", "DevOps", "OpenEnv"],
-    year: "2025",
-  },
-  {
-    title: "SmartCap",
-    subtitle: "AI Cervical Posture Predictor (IoT + Mobile App)",
-    description:
-      "IoT wearable integrating ESP32-C3, MPU-6050 IMU, and BLE that continuously tracks cervical posture and alerts the user through haptic vibration and a companion mobile app.",
-    image: "/images/project-3.png",
-    link: "",
-    details: [
-      "Built a wearable device with ESP32-C3, MPU-6050 IMU, and BLE for continuous cervical posture tracking with haptic vibration alerts and a companion mobile app.",
-      "Trained a gradient boosting classifier on real-time IMU data to predict posture quality and forecast potential cervical health risks, including likely body issues and estimated onset timeline.",
-      "Filed an Indian patent for the device and delivered the full product package including research documentation, system architecture, and an investor-ready pitch deck.",
-    ],
-    tech: ["ESP32-C3", "IoT", "BLE", "ML", "Mobile App", "Patent Filed"],
+    tech: ["Python", "Agentic AI", "DevOps", "OpenEnv"],
     year: "2025",
   },
 ];
@@ -65,44 +77,44 @@ export const skillTags = [
   "Node.js",
   "LLMs",
   "Voice AI",
+  "Agentic AI",
   "React",
   "Next.js",
-  "Tailwind CSS",
   "FastAPI",
+  "SAP B1",
   "Docker",
   "Kubernetes",
   "Azure",
   "PostgreSQL",
   "Supabase",
   "Twilio",
-  "Prompt Engineering",
   "REST APIs",
 ];
 
 export const stats = [
   { value: 80, suffix: "%", label: "Manual Sales Work Reduced (Sellixis)" },
   { value: 60, suffix: "%", label: "Lower Cost vs Competitors (Sellixis)" },
-  { value: 80, suffix: "%", label: "Manual Handoffs Cut (Vernika)" },
+  { value: 4, suffix: "", label: "Production Modules (SAP Platform)" },
   { value: 24, suffix: "/7", label: "AI Agent Uptime" },
 ];
 
 export const experiences = [
   {
-    role: "Product Engineer",
-    company: "Concept2Action (C2A)",
-    type: "Remote, USA — 2026",
+    role: "AI Generalist",
+    company: "Alamir Groups (Food Industry)",
+    type: "Remote, UAE — 2025",
     description:
-      "Designing and shipping production-grade AI products end-to-end, owning concept, architecture, implementation, and deployment for live systems. Built and scaled Sellixis, an AI Sales Operating System automating end-to-end sales across WhatsApp, Instagram, Facebook, and AI voice channels.",
-    tags: ["Product Engineering", "AI Products", "Full-Stack"],
+      "Built an automation layer over the company’s SAP Business One ERP covering purchase orders, KYC onboarding, inventory, and bank reconciliation.",
+    tags: ["SAP B1", "Workflow Automation", "ERP"],
     label: "Current",
   },
   {
-    role: "AI Automation Engineer Intern",
-    company: "Pitch X",
-    type: "Remote — 2025",
+    role: "AI Engineer Intern",
+    company: "Concept2Action (C2A)",
+    type: "Remote, USA — 2026",
     description:
-      "Cut manual handoffs by 80% by building Vernika, a production voice-calling SaaS with Twilio + LLM-driven IVR. Engineered low-latency streaming speech pipelines (Whisper/Groq) with API orchestration, monitoring, and confidence scoring.",
-    tags: ["Voice AI", "Twilio", "LLMs"],
+      "Took Sellixis from architecture to production launch across WhatsApp, Instagram, Facebook, and voice. Shipped LLM features with the product team and added logging and monitoring for predictable releases.",
+    tags: ["AI Engineering", "LLMs", "Full-Stack"],
   },
 ];
 
@@ -114,10 +126,8 @@ export const education = {
 };
 
 export const achievements = [
+  "Winner — Hack for Impact, Australia–India Hackathon (2025) and GenAI Hackathon 2025",
   "Top 100 out of 70,000+ teams in a national-level hackathon",
-  "Won GenAI Hackathon 2025",
-  "Microsoft Certified: Azure AI Fundamentals (AI-900)",
-  "Google Cloud Fundamentals: AI Automation Learning (Coursera)",
   "AI Automation Intern — Pitch X (2025)",
 ];
 

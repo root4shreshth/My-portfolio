@@ -40,7 +40,7 @@ const commands: CommandItem[] = [
   {
     id: "projects",
     label: "View Projects",
-    description: "Sellixis, Praetor, SmartCap",
+    description: "SAP Platform, SmartCap, Sellixis, Praetor",
     icon: "🚀",
     action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
     keywords: ["projects", "work", "cara", "leadflow", "heisyn", "sourcesync", "portfolio"],

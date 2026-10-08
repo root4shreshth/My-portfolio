@@ -88,7 +88,7 @@ export default function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-[15px] sm:text-[16px] text-white/40 font-sans mt-5 leading-relaxed max-w-md animate-fade-slide-in-3">
-            AI Product Engineer shipping production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines.
+            AI Engineer who takes systems from prototype to production — backend architecture, LLM and agent design, deployment, and monitoring. Patent holder and two-time hackathon winner.
           </p>
 
           {/* CTAs */}

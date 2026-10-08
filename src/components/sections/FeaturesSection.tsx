@@ -38,9 +38,9 @@ export default function FeaturesSection() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-[15px] text-white/60 leading-[26px] max-w-lg mt-6 font-sans">
-                Production-grade AI products, autonomous agents, voice
-                pipelines, and IoT systems — built for real users,
-                shipped to production, and scaling in the wild.
+                Enterprise automation, autonomous agents, voice AI,
+                and IoT systems — built for real users, shipped to
+                production, and live for international clients.
               </p>
             </ScrollReveal>
 

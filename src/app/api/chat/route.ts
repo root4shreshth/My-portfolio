@@ -12,7 +12,7 @@ PERSONAL INFO
 ═══════════════════════════════════════
 Name: Shreshth Srivastava
 Location: India
-Title: AI Product Engineer
+Title: AI Engineer
 Email: hype4shreshth@gmail.com
 Phone/WhatsApp: +91 9335963562
 LinkedIn: linkedin.com/in/root4shreshth
@@ -23,7 +23,7 @@ Portfolio: hype4shreshth.in
 ═══════════════════════════════════════
 SUMMARY
 ═══════════════════════════════════════
-AI Product Engineer who ships production-grade AI products powered by LLMs, agentic systems, and real-time voice pipelines. Owns the full 0-to-1 lifecycle across product design, backend engineering, AI integration, and deployment, building reliable, observable, and scalable systems that automate business workflows and deliver measurable user impact.
+AI Engineer who takes systems from prototype to production: backend architecture, LLM and agent design, deployment, and the monitoring that keeps them running. Experienced across enterprise workflow automation, real-time voice AI, and autonomous agents, with work live in production for international clients. Patent holder and two-time hackathon winner.
 
 ═══════════════════════════════════════
 EDUCATION
@@ -36,70 +36,63 @@ EDUCATION
 EXPERIENCE
 ═══════════════════════════════════════
 
-1. Product Engineer — Concept2Action (C2A)
-   Location: Remote, USA | Year: 2026 – Present (Current Role)
-   - Designing and shipping production-grade AI products end-to-end, owning concept, architecture, implementation, and deployment for live systems used by real users
-   - Built and scaled Sellixis, an AI Sales Operating System automating end-to-end sales across WhatsApp, Instagram, Facebook, and AI voice channels, from concept through production launch
-   - Collaborating with product, design, and engineering teams to integrate LLM-driven features, improve system reliability, and maintain clean, scalable, observable codebases
+1. AI Generalist — Alamir Groups (Food Industry)
+   Location: Remote, UAE | Year: 2025 – Present (Current Role)
+   - Built an automation layer over the company's SAP Business One ERP covering purchase orders, KYC onboarding, inventory, and bank reconciliation
 
-2. AI Automation Engineer Intern — Pitch X
-   Location: Remote | Year: 2025
-   - Cut manual handoffs by 80% by building Vernika, a production voice-calling SaaS that automated lead qualification and routing using Twilio and LLM-driven IVR workflows
-   - Engineered low-latency streaming speech pipelines (Whisper / Groq) integrated with Twilio Voice API for real-time conversational AI and workflow automation
-   - Implemented API orchestration with caching, monitoring, and event triggers; added observability, confidence scoring, and logging
+2. AI Engineer Intern — Concept2Action (C2A)
+   Location: Remote, USA | Year: 2026
+   - Took Sellixis from architecture to production launch across WhatsApp, Instagram, Facebook, and voice
+   - Shipped LLM features with the product team and added logging and monitoring for predictable releases
 
 ═══════════════════════════════════════
 PROJECTS
 ═══════════════════════════════════════
 
-1. Sellixis — AI Sales Operating System (2025 – Present) [Flagship Project]
-   - Autonomous 24x7 AI Sales OS that automates end-to-end sales pipelines with near-zero human intervention
-   - Engages leads instantly across WhatsApp, Instagram, and Facebook the moment they enter the funnel
-   - AI voice calling agent that auto-qualifies leads, handles objections, and books meetings/appointments directly into business calendars
-   - Reduces manual sales work by 80%
-   - Unified multichannel orchestration layer with LLMs, real-time speech pipelines, and CRM integrations
-   - Delivers full sales automation at 60% lower cost than competing solutions
-   - Tech: Voice AI, LLMs, WhatsApp API, CRM Sync, Twilio, Real-time Speech
+1. Enterprise Operations Platform — Next.js + SAP Business One (2025 – Present) [Live]
+   - Four modules: KYC onboarding, PO automation, card reconciliation, inventory portal
+   - Built on Next.js 14 and Supabase, wired to SAP via the Service Layer REST API
+   - Agentic pipeline extracts contracts from procurement email, auto-fills forms, and runs compliance checks behind dual approval gates
+   - Tech: Next.js, Supabase, SAP B1, Agentic AI, REST API, TypeScript
 
-2. Praetor — Autonomous AI Incident Commander (2025)
-   - Autonomous SRE / DevOps agent that, once paged, investigates incidents using a typed 10-action vocabulary
-   - Decides remediations via a trained policy, executes through a Backend Protocol, verifies recovery
-   - Escalates to code-level investigation when runtime ops are insufficient
-   - Shipped the first OpenEnv-compatible environment for SRE / DevOps: simulator, curriculum, training pipeline, sim-to-real bridge, tier-2 code escalation, autonomous webhook ingestion, and post-mortem writer
-   - Strict JSON action contracts, retries, and full audit logging for reproducible, observable, production-safe autonomous remediation
-   - Tech: Python, Agentic AI, JSON Contracts, DevOps, OpenEnv
-
-3. SmartCap — AI Cervical Posture Predictor (IoT + Mobile App) (2025)
-   - IoT wearable integrating ESP32-C3, MPU-6050 IMU, and BLE for continuous cervical posture tracking
-   - Alerts user through haptic vibration and a companion mobile app on poor posture detection
-   - Gradient boosting classifier on real-time IMU data predicts posture quality and forecasts potential cervical health risks
-   - Filed an Indian patent for the device
-   - Delivered full product package: research documentation, system architecture, investor-ready pitch deck
+2. SmartCap — AI Cervical Posture Predictor (IoT + Mobile) (2026) [Patent]
+   - ESP32-C3 wearable with IMU and BLE that flags poor cervical posture via haptic alerts and a paired mobile app
+   - Gradient boosting model scores posture from live IMU data and projects a risk onset horizon
+   - Granted an Indian patent and published
    - Tech: ESP32-C3, IoT, BLE, ML, Mobile App
 
-4. Other Projects: Live Data Tracker, Lead Scraper Tool, Auto Workflow Maker
+3. Sellixis — AI Sales Automation System (2026) [Live video]
+   - 24x7 agent that works leads across WhatsApp, Instagram, and Facebook
+   - Voice agent qualifies, handles objections, and books meetings
+   - Cut manual sales work by 80% and runs at 60% lower cost than comparable tools
+   - Tech: Voice AI, LLMs, WhatsApp API, CRM Sync, Twilio
+
+4. Praetor — Autonomous AI Incident Commander (2025) [Live Demo] [GitHub]
+   - Autonomous SRE agent that triages incidents with a typed 10-action vocabulary and picks remediations from a trained policy
+   - First OpenEnv-compatible DevOps environment: simulator, curriculum, training pipeline, and sim-to-real bridge
+   - Tech: Python, Agentic AI, DevOps, OpenEnv
+
+5. Other Projects: Live Data Tracker, Lead Scraper Tool, Auto Workflow Maker
 
 ═══════════════════════════════════════
 TECHNICAL SKILLS
 ═══════════════════════════════════════
-- AI & LLMs: LLMs, voice AI agents, real-time speech pipelines, prompt engineering
-- Languages & Frameworks: Python, JavaScript, TypeScript, Node.js, FastAPI, Next.js, React, Tailwind CSS
-- Cloud & Infra: Azure, Docker, Kubernetes, PostgreSQL, REST APIs, webhooks, Git, CI/CD
-- Tools: GPT, Gemini, Claude, Whisper, Groq, Twilio, Supabase
+- Core AI & Backend: Python, FastAPI, PostgreSQL, REST APIs, webhooks, Docker, Kubernetes, Azure
+- AI & Voice: LLMs, agentic AI, prompt engineering, real-time speech pipelines, voice agents, Whisper, Groq, Twilio
+- Enterprise & ERP: SAP Business One, SAP Service Layer REST API, workflow automation, OAuth integrations
+- Web & Tooling: Next.js, React, TypeScript, Node.js, Tailwind CSS, Supabase, Git, CI/CD, PM2, Cloudflare Tunnel
 
 ═══════════════════════════════════════
 ACHIEVEMENTS & CERTIFICATIONS
 ═══════════════════════════════════════
-- Selected in the Top 100 teams out of 70,000+ in a national-level hackathon
-- Won GenAI Hackathon 2025
-- Microsoft Certified: Azure AI Fundamentals (AI-900) — Jun 2025
-- Google Cloud Fundamentals: AI Automation Learning (Coursera) — May 2025
+- Winner — Hack for Impact, Australia–India Hackathon (2025), and GenAI Hackathon 2025
+- Top 100 teams out of 70,000+ in a national-level hackathon
 - AI Automation Intern — Pitch X (2025)
 
 ═══════════════════════════════════════
 AVAILABILITY
 ═══════════════════════════════════════
-Open to full-time and contract roles in 2026. Currently working at C2A as Product Engineer (USA, Remote).
+Open to opportunities. Currently working at Alamir Groups as AI Generalist (UAE, Remote).
 Best ways to connect: WhatsApp (+91 9335963562) or LinkedIn (linkedin.com/in/root4shreshth).
 
 ═══════════════════════════════════════

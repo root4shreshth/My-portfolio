@@ -27,9 +27,9 @@ export default function ExperienceSection() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-[15px] text-white/60 leading-[26px] max-w-lg mt-6 font-sans">
-                From product engineering to AI automation — shipping reliable
-                systems to production that scale. B.Tech in Computer
-                Science from United University (2024 – 2028).
+                Taking systems from prototype to production — enterprise
+                automation, voice AI, and autonomous agents live for
+                international clients. B.Tech in CS from United University (2024 – 2028).
               </p>
             </ScrollReveal>
           </div>
