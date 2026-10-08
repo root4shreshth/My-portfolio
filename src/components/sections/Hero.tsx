@@ -46,6 +46,7 @@ export default function Hero() {
             className="col-span-12 self-center font-medium leading-[0.86] tracking-[-0.055em] text-[clamp(3.25rem,15vw,7.5rem)] tab:order-1 tab:col-span-7 tab:text-[clamp(4.5rem,9.2vw,11.5rem)]"
           >
             <Lines lines={[profile.first, <span key="l" className="t-serif text-fg-2">{profile.last}</span>]} step={0.12} />
+            <span className="sr-only"> — {profile.role}</span>
           </h1>
         </div>
 

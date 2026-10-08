@@ -88,16 +88,8 @@ export default function Lab() {
                     </span>
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        id={panelId}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.5, ease: [0.7, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
+                  <div id={panelId} inert={!isOpen} className={`collapse-panel ${isOpen ? "is-open" : ""}`}>
+                    <div className="min-h-0">
                         <div className="grid gap-5 pb-6 tab:grid-cols-[5rem_1fr] tab:gap-4">
                           <div className="t-mono flex flex-wrap gap-x-4 gap-y-1 text-fg-3 tab:col-start-2 tab:hidden">
                             <span>{a.type}</span>
@@ -118,9 +110,8 @@ export default function Lab() {
                             )}
                           </div>
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                    </div>
+                  </div>
                 </li>
               );
             })}

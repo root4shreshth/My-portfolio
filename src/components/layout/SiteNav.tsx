@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { sections } from "@/lib/content";
 import EyeAnchor from "@/components/optic/EyeAnchor";
 import { emit } from "@/lib/events";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import MenuOverlay from "./MenuOverlay";
 
 export default function SiteNav() {
@@ -69,7 +70,7 @@ export default function SiteNav() {
             <button
               type="button"
               onClick={() => emit("open-chat")}
-              className="t-mono hidden h-10 items-center gap-2 border border-line px-3 text-fg-2 transition-colors hover:border-line-2 hover:text-fg xs:inline-flex"
+              className="t-mono hidden h-10 items-center gap-2 border border-line px-3 text-fg-2 transition-colors hover:border-line-2 hover:text-fg tab:inline-flex"
               aria-label="Ask the AI assistant"
             >
               <span className="dot" />
@@ -83,10 +84,11 @@ export default function SiteNav() {
             >
               ⌘K
             </button>
+            <ThemeToggle className="px-2.5 tab:px-3" />
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
-              className="t-mono inline-flex h-10 items-center gap-2 border border-line-2 px-4 transition-colors hover:border-fg"
+              className="t-mono inline-flex h-10 items-center gap-2 border border-line-2 px-3 transition-colors hover:border-fg xs:px-4"
               aria-expanded={menuOpen}
               aria-controls="site-menu"
             >

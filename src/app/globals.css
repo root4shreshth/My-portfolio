@@ -2,16 +2,16 @@
 @import "lenis/dist/lenis.css";
 
 @theme inline {
-  --color-ink-0: #050505;
-  --color-ink-1: #0b0b0c;
-  --color-graphite: #151517;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-2: rgba(255, 255, 255, 0.16);
-  --color-fg: #ededeb;
-  --color-fg-2: #a1a1a0;
-  --color-fg-3: #6a6a69;
-  --color-signal: #ff2a1f;
-  --color-signal-dim: rgba(255, 42, 31, 0.14);
+  --color-ink-0: var(--ink-0);
+  --color-ink-1: var(--ink-1);
+  --color-graphite: var(--graphite);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-signal: var(--signal);
+  --color-signal-dim: var(--signal-dim);
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -38,7 +38,36 @@
   --fs-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
   --fs-mono: 0.6875rem;
 
+  --ink-0: #050505;
+  --ink-1: #0b0b0c;
+  --graphite: #151517;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.16);
+  --fg: #ededeb;
+  --fg-2: #a1a1a0;
+  --fg-3: #6a6a69;
+  --signal: #ff2a1f;
+  --signal-dim: rgba(255, 42, 31, 0.14);
+  --scroll-thumb: rgba(255, 255, 255, 0.14);
+
   color-scheme: dark;
+}
+
+/* Light: warm paper, ink-black type, a deeper red so indicators keep contrast on white. */
+[data-theme="light"] {
+  --ink-0: #f2f1ec;
+  --ink-1: #e9e7e1;
+  --graphite: #dfddd6;
+  --line: rgba(10, 10, 10, 0.1);
+  --line-2: rgba(10, 10, 10, 0.2);
+  --fg: #0d0d0d;
+  --fg-2: #4d4d4b;
+  --fg-3: #7c7b77;
+  --signal: #d7231a;
+  --signal-dim: rgba(215, 35, 26, 0.12);
+  --scroll-thumb: rgba(0, 0, 0, 0.2);
+
+  color-scheme: light;
 }
 
 html {
@@ -59,7 +88,7 @@ body {
 
 ::selection {
   background: var(--color-signal);
-  color: #000;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -69,7 +98,18 @@ body {
   background: var(--color-ink-0);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--scroll-thumb);
+}
+
+/* Smooth palette swap when toggling; disabled for reduced motion below. */
+html.theme-switching,
+html.theme-switching * {
+  transition:
+    background-color 0.5s var(--ease-instrument),
+    color 0.5s var(--ease-instrument),
+    border-color 0.5s var(--ease-instrument),
+    fill 0.5s var(--ease-instrument),
+    stroke 0.5s var(--ease-instrument) !important;
 }
 
 /* ---------- layout ---------- */
@@ -174,7 +214,7 @@ body {
 .btn-solid:hover {
   background: var(--color-signal);
   border-color: var(--color-signal);
-  color: #000;
+  color: var(--color-ink-0);
 }
 
 .link-line {
@@ -240,6 +280,21 @@ body {
 .fade-up.is-in {
   opacity: 1;
   transform: none;
+}
+
+/* Height-auto accordion that keeps content in the DOM for crawlers. */
+.collapse-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    grid-template-rows 0.6s var(--ease-instrument),
+    opacity 0.4s var(--ease-instrument);
+}
+.collapse-panel.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 
 .mask {

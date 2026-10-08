@@ -56,7 +56,7 @@ export default function Capabilities() {
           <div className="col-span-12 tab:col-span-7">
             <div className="relative mx-auto aspect-square w-full max-w-[720px]">
               <svg ref={map} viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label="Concentric map of capability categories around the sensor">
-                <circle cx={C} cy={C} r={290} fill="none" stroke="rgba(255,255,255,.06)" />
+                <circle cx={C} cy={C} r={290} className="fill-none stroke-line" />
                 {[0, 45, 90, 135].map((deg) => (
                   <line
                     key={deg}
@@ -64,7 +64,7 @@ export default function Capabilities() {
                     y1={r2(C + Math.sin((deg * Math.PI) / 180) * 290)}
                     x2={r2(C - Math.cos((deg * Math.PI) / 180) * 290)}
                     y2={r2(C - Math.sin((deg * Math.PI) / 180) * 290)}
-                    stroke="rgba(255,255,255,.04)"
+                    className="stroke-line opacity-60"
                   />
                 ))}
                 {capabilities.map((cap, ci) => {
@@ -84,9 +84,8 @@ export default function Capabilities() {
                         cy={C}
                         r={r}
                         fill="none"
-                        stroke={on ? "#ff2a1f" : "rgba(255,255,255,.16)"}
+                        className={`fill-none transition-[stroke] duration-500 ${on ? "stroke-signal" : "stroke-line-2"}`}
                         strokeDasharray={on ? undefined : "1 5"}
-                        style={{ transition: "stroke .5s" }}
                       />
                       {cap.items.map((item, i) => {
                         const p = polar(r, i, cap.items.length, ci * 0.4);
@@ -96,7 +95,7 @@ export default function Capabilities() {
                             cx={p.x}
                             cy={p.y}
                             r={on ? 4.5 : 2.6}
-                            fill={on ? "#ff2a1f" : "#6a6a69"}
+                            className={on ? "fill-signal" : "fill-fg-3"}
                             style={{ transition: "r .5s, fill .5s" }}
                           />
                         );
@@ -105,11 +104,10 @@ export default function Capabilities() {
                         x={C}
                         y={C - r - 8}
                         textAnchor="middle"
-                        fill={on ? "#ededeb" : "#6a6a69"}
+                        className={`transition-[fill] duration-500 ${on ? "fill-fg" : "fill-fg-3"}`}
                         fontFamily="var(--font-geist-mono), monospace"
                         fontSize="10"
                         letterSpacing="2"
-                        style={{ transition: "fill .5s" }}
                       >
                         R{ci + 1}
                       </text>

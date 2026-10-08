@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/lib/lenis-provider";
+import { themeInitScript } from "@/lib/theme";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
+import { capabilities, contact } from "@/lib/content";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -20,77 +23,124 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
-const description =
-  "AI Engineer who takes systems from prototype to production — backend architecture, LLM and agent design, deployment and monitoring. Enterprise automation, real-time voice AI and autonomous agents.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hype4shreshth.framer.website"),
-  title: "Shreshth Srivastava — AI Engineer",
-  description,
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_TITLE, template: `%s — ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     "Shreshth Srivastava",
     "AI Engineer",
-    "LLM agents",
-    "Voice AI",
+    "AI Engineer India",
+    "LLM engineer",
+    "AI agents developer",
+    "Voice AI engineer",
+    "Agentic AI",
     "SAP Business One automation",
-    "Next.js",
-    "Python",
+    "Workflow automation",
+    "Next.js developer",
+    "Python FastAPI",
+    "Sellixis",
+    "SmartCap patent",
   ],
-  authors: [{ name: "Shreshth Srivastava" }],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Shreshth Srivastava — AI Engineer",
-    description,
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630 }],
-    type: "website",
+    type: "profile",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     locale: "en_US",
+    firstName: "Shreshth",
+    lastName: "Srivastava",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shreshth Srivastava — AI Engineer",
-    description,
-    images: ["/images/og-image.png"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     creator: "@Rootshreshth",
   },
-  icons: { icon: "/images/favicon.png" },
-  robots: { index: true, follow: true },
+  icons: { icon: "/images/favicon.png", apple: "/images/favicon.png" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
+  category: "technology",
 };
 
 export const viewport: Viewport = {
   themeColor: "#050505",
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
+
+const personId = `${SITE_URL}/#person`;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Shreshth Srivastava",
-  jobTitle: "AI Engineer",
-  url: "https://hype4shreshth.framer.website",
-  sameAs: [
-    "https://x.com/Rootshreshth",
-    "https://www.linkedin.com/in/root4shreshth/",
-    "https://github.com/root4shreshth",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: SITE_NAME,
+      givenName: "Shreshth",
+      familyName: "Srivastava",
+      url: SITE_URL,
+      image: `${SITE_URL}/opengraph-image`,
+      jobTitle: "AI Engineer",
+      description: SITE_DESCRIPTION,
+      email: `mailto:${contact.email}`,
+      address: { "@type": "PostalAddress", addressCountry: "IN" },
+      worksFor: { "@type": "Organization", name: "Alamir Groups" },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "United University",
+        address: { "@type": "PostalAddress", addressLocality: "Prayagraj", addressRegion: "Uttar Pradesh", addressCountry: "IN" },
+      },
+      award: [
+        "Winner — Hack for Impact, Australia–India Hackathon (2025)",
+        "Winner — GenAI Hackathon 2025",
+        "Top 100 of 70,000+ teams in a national-level hackathon",
+        "Indian patent granted — SmartCap cervical posture predictor",
+      ],
+      knowsAbout: capabilities.flatMap((c) => c.items),
+      sameAs: contact.links.map((l) => l.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      inLanguage: "en",
+      publisher: { "@id": personId },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profile`,
+      url: SITE_URL,
+      name: SITE_TITLE,
+      inLanguage: "en",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      mainEntity: { "@id": personId },
+      dateModified: new Date().toISOString().slice(0, 10),
+    },
   ],
-  knowsAbout: [
-    "Artificial Intelligence",
-    "LLM agents",
-    "Voice AI",
-    "SAP Business One",
-    "Workflow automation",
-    "Next.js",
-    "Python",
-    "TypeScript",
-  ],
-  alumniOf: { "@type": "CollegeOrUniversity", name: "United University" },
-  description,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <script
           type="application/ld+json"

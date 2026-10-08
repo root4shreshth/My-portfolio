@@ -1,7 +1,6 @@
 "use client";
 
 import { useId, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import type { Work } from "@/lib/content";
 import Reveal, { Lines } from "@/components/ui/Reveal";
 import PlateFrame from "./PlateFrame";
@@ -87,32 +86,24 @@ export default function Chapter({ item, flip }: { item: Work; flip: boolean }) {
             </span>
           </button>
 
-          <AnimatePresence initial={false}>
-            {open && (
-              <motion.div
-                id={panelId}
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.6, ease: [0.7, 0, 0.2, 1] }}
-                className="overflow-hidden"
-              >
-                <div className="space-y-6 py-6">
-                  {item.caseStudy.map((c) => (
-                    <div key={c.label} className="grid gap-2 xs:grid-cols-[6.5rem_1fr] xs:gap-4">
-                      <p className="t-mono text-signal">{c.label}</p>
-                      <p className="text-[0.9375rem] leading-relaxed text-fg-2">{c.body}</p>
-                    </div>
-                  ))}
-                  {item.links?.map((l) => (
-                    <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="t-mono link-line inline-block">
-                      {l.label} ↗
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Always in the DOM (collapsed via CSS) so the case study is crawlable and searchable. */}
+          <div id={panelId} inert={!open} className={`collapse-panel ${open ? "is-open" : ""}`}>
+            <div className="min-h-0">
+              <div className="space-y-6 py-6">
+                {item.caseStudy.map((c) => (
+                  <div key={c.label} className="grid gap-2 xs:grid-cols-[6.5rem_1fr] xs:gap-4">
+                    <h4 className="t-mono text-signal">{c.label}</h4>
+                    <p className="text-[0.9375rem] leading-relaxed text-fg-2">{c.body}</p>
+                  </div>
+                ))}
+                {item.links?.map((l) => (
+                  <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="t-mono link-line inline-block">
+                    {l.label} ↗
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </Reveal>
       </div>
     </article>
