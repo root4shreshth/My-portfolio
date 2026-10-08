@@ -1,283 +1,164 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { contact, profile, sections } from "@/lib/content";
+import { scrollToId } from "@/lib/lenis-provider";
+import { emit, on } from "@/lib/events";
 
-interface CommandItem {
+interface Command {
   id: string;
+  glyph: string;
   label: string;
-  description: string;
-  icon: string;
-  action: () => void;
-  keywords: string[];
+  hint: string;
+  keywords: string;
+  run: () => void;
 }
 
-const commands: CommandItem[] = [
-  {
-    id: "home",
-    label: "Go to Home",
-    description: "Scroll to the top",
-    icon: "🏠",
-    action: () => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["home", "top", "start", "hero"],
-  },
-  {
-    id: "about",
-    label: "About Shreshth",
-    description: "Learn about my background",
-    icon: "👤",
-    action: () => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["about", "who", "bio", "background", "me"],
-  },
-  {
-    id: "experience",
-    label: "Work Experience",
-    description: "C2A, Pitch X, and more",
-    icon: "💼",
-    action: () => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["experience", "work", "jobs", "career", "c2a", "pitch"],
-  },
-  {
-    id: "projects",
-    label: "View Projects",
-    description: "SAP Platform, SmartCap, Sellixis, Praetor",
-    icon: "🚀",
-    action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["projects", "work", "cara", "leadflow", "heisyn", "sourcesync", "portfolio"],
-  },
-  {
-    id: "contact",
-    label: "Contact Me",
-    description: "Get in touch via WhatsApp or email",
-    icon: "📬",
-    action: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["contact", "email", "phone", "whatsapp", "reach", "talk", "hire"],
-  },
-  {
-    id: "resume",
-    label: "Download Resume",
-    description: "Get my latest resume as PDF",
-    icon: "📄",
-    action: () => window.open("/Shreshth-Srivastava-Resume.pdf", "_blank"),
-    keywords: ["resume", "cv", "pdf", "download"],
-  },
-  {
-    id: "whatsapp",
-    label: "WhatsApp Me",
-    description: "Open WhatsApp chat directly",
-    icon: "💬",
-    action: () => window.open("https://Wa.me/+919335963562", "_blank"),
-    keywords: ["whatsapp", "chat", "message", "connect"],
-  },
-  {
-    id: "github",
-    label: "GitHub Profile",
-    description: "View my open source work",
-    icon: "🐙",
-    action: () => window.open("https://github.com/root4shreshth", "_blank"),
-    keywords: ["github", "code", "repos", "open source"],
-  },
-  {
-    id: "linkedin",
-    label: "LinkedIn Profile",
-    description: "Connect on LinkedIn",
-    icon: "🔗",
-    action: () => window.open("https://www.linkedin.com/in/root4shreshth/", "_blank"),
-    keywords: ["linkedin", "professional", "connect", "network"],
-  },
-  {
-    id: "twitter",
-    label: "Twitter / X",
-    description: "Follow me on X",
-    icon: "🐦",
-    action: () => window.open("https://x.com/Rootshreshth", "_blank"),
-    keywords: ["twitter", "x", "social", "follow"],
-  },
-  {
-    id: "skills",
-    label: "Technical Skills",
-    description: "Python, LLMs, React, Node.js, Twilio...",
-    icon: "⚡",
-    action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }),
-    keywords: ["skills", "tech", "python", "react", "node", "llm", "ai", "twilio", "nextjs"],
-  },
-];
+const open = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
 
 export default function CommandPalette() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [index, setIndex] = useState(0);
+  const input = useRef<HTMLInputElement>(null);
 
-  const filtered = query
-    ? commands.filter(
-        (cmd) =>
-          cmd.label.toLowerCase().includes(query.toLowerCase()) ||
-          cmd.description.toLowerCase().includes(query.toLowerCase()) ||
-          cmd.keywords.some((k) => k.includes(query.toLowerCase()))
-      )
-    : commands;
-
-  const handleKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      // Open: Cmd+K or Ctrl+K
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        setOpen((prev) => !prev);
-        setQuery("");
-        setSelectedIndex(0);
-      }
-      // Close: Escape
-      if (e.key === "Escape") {
-        setOpen(false);
-      }
-    },
+  const commands = useMemo<Command[]>(
+    () => [
+      ...sections.map((s) => ({
+        id: s.id,
+        glyph: s.index,
+        label: s.label,
+        hint: "Go to section",
+        keywords: `${s.label} ${s.id}`.toLowerCase(),
+        run: () => scrollToId(s.id),
+      })),
+      { id: "resume", glyph: "↓", label: "Résumé", hint: "Open PDF", keywords: "resume cv pdf download", run: () => open(profile.resume) },
+      { id: "email", glyph: "@", label: "Email", hint: contact.email, keywords: "email mail contact hire", run: () => (window.location.href = `mailto:${contact.email}`) },
+      { id: "whatsapp", glyph: "↗", label: "WhatsApp", hint: contact.phone, keywords: "whatsapp phone chat", run: () => open(contact.whatsapp) },
+      ...contact.links.map((l) => ({
+        id: l.label,
+        glyph: "↗",
+        label: l.label,
+        hint: l.href.replace("https://", ""),
+        keywords: l.label.toLowerCase(),
+        run: () => open(l.href),
+      })),
+      { id: "ask", glyph: "?", label: "Ask the system", hint: "AI assistant", keywords: "ai chat ask assistant question", run: () => emit("open-chat") },
+    ],
     []
   );
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return commands;
+    return commands.filter((c) => c.label.toLowerCase().includes(q) || c.keywords.includes(q) || c.hint.toLowerCase().includes(q));
+  }, [commands, query]);
 
-  useEffect(() => {
-    if (open) {
-      setTimeout(() => inputRef.current?.focus(), 50);
-    }
-  }, [open]);
-
-  useEffect(() => {
-    setSelectedIndex(0);
-  }, [query]);
-
-  const executeCommand = (cmd: CommandItem) => {
-    cmd.action();
-    setOpen(false);
+  const show = useCallback(() => {
     setQuery("");
+    setIndex(0);
+    setIsOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsOpen((v) => !v);
+        setQuery("");
+        setIndex(0);
+      } else if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    const off = on("open-palette", show);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      off();
+    };
+  }, [show]);
+
+  useEffect(() => {
+    if (isOpen) requestAnimationFrame(() => input.current?.focus());
+  }, [isOpen]);
+
+  const run = (c: Command) => {
+    setIsOpen(false);
+    requestAnimationFrame(c.run);
   };
 
-  const handleInputKeyDown = (e: React.KeyboardEvent) => {
+  const onInputKey = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIndex((prev) => Math.min(prev + 1, filtered.length - 1));
+      setIndex((i) => Math.min(i + 1, filtered.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setSelectedIndex((prev) => Math.max(prev - 1, 0));
-    } else if (e.key === "Enter" && filtered[selectedIndex]) {
-      executeCommand(filtered[selectedIndex]);
+      setIndex((i) => Math.max(i - 1, 0));
+    } else if (e.key === "Enter" && filtered[index]) {
+      run(filtered[index]);
     }
   };
 
   return (
     <AnimatePresence>
-      {open && (
+      {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
+            className="fixed inset-0 z-[80] bg-ink-0/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
-            onClick={() => setOpen(false)}
+            onClick={() => setIsOpen(false)}
           />
-
-          {/* Palette */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed top-[20%] left-1/2 -translate-x-1/2 z-[101] w-[90vw] max-w-[560px]"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Command palette"
+            data-lenis-prevent
+            className="fixed left-1/2 top-[12vh] z-[81] w-[calc(100vw-32px)] max-w-[560px] -translate-x-1/2 border border-line-2 bg-ink-1"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: [0.7, 0, 0.2, 1] }}
           >
-            <div className="rounded-2xl bg-[#111113] ring-1 ring-white/10 shadow-2xl overflow-hidden">
-              {/* Search Input */}
-              <div className="flex items-center gap-3 px-4 border-b border-white/10">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white/30 shrink-0"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onKeyDown={handleInputKeyDown}
-                  placeholder="Search commands, navigate, or ask..."
-                  className="flex-1 bg-transparent border-none outline-none text-[15px] text-white placeholder:text-white/30 py-4 font-sans"
-                />
-                <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[11px] text-white/30 ring-1 ring-white/10 font-sans">
-                  ESC
-                </kbd>
-              </div>
-
-              {/* Results */}
-              <div className="max-h-[360px] overflow-y-auto p-2">
-                {filtered.length === 0 ? (
-                  <div className="py-8 text-center text-[14px] text-white/30 font-sans">
-                    No results found for &ldquo;{query}&rdquo;
-                  </div>
-                ) : (
-                  filtered.map((cmd, index) => (
-                    <button
-                      key={cmd.id}
-                      onClick={() => executeCommand(cmd)}
-                      onMouseEnter={() => setSelectedIndex(index)}
-                      className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-colors cursor-pointer ${
-                        index === selectedIndex
-                          ? "bg-white/10"
-                          : "hover:bg-white/5"
-                      }`}
-                    >
-                      <span className="text-[18px] w-[28px] text-center shrink-0">
-                        {cmd.icon}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-[14px] text-white/90 font-medium font-sans truncate">
-                          {cmd.label}
-                        </p>
-                        <p className="text-[12px] text-white/40 font-sans truncate">
-                          {cmd.description}
-                        </p>
-                      </div>
-                      {index === selectedIndex && (
-                        <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] text-white/30 ring-1 ring-white/10 font-sans shrink-0">
-                          ↵
-                        </kbd>
-                      )}
-                    </button>
-                  ))
-                )}
-              </div>
-
-              {/* Footer hint */}
-              <div className="flex items-center justify-between px-4 py-2.5 border-t border-white/10">
-                <div className="flex items-center gap-3 text-[11px] text-white/25 font-sans">
-                  <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 rounded ring-1 ring-white/10">↑↓</kbd> navigate
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 rounded ring-1 ring-white/10">↵</kbd> select
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <kbd className="px-1 py-0.5 rounded ring-1 ring-white/10">esc</kbd> close
-                  </span>
-                </div>
-                <span className="text-[11px] text-white/20 font-sans">
-                  AI Portfolio
-                </span>
-              </div>
+            <div className="flex items-center gap-3 border-b border-line px-4">
+              <span className="t-mono text-signal">›</span>
+              <input
+                ref={input}
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setIndex(0);
+                }}
+                onKeyDown={onInputKey}
+                placeholder="Type a command or section"
+                aria-label="Search commands"
+                aria-controls="palette-list"
+                aria-activedescendant={filtered[index] ? `cmd-${filtered[index].id}` : undefined}
+                className="h-14 flex-1 bg-transparent text-[0.9375rem] outline-none placeholder:text-fg-3"
+              />
+              <kbd className="t-mono hidden border border-line px-1.5 py-0.5 text-fg-3 xs:inline">Esc</kbd>
             </div>
+            <ul id="palette-list" role="listbox" className="max-h-[60vh] overflow-y-auto py-2">
+              {filtered.length === 0 && <li className="t-mono px-4 py-6 text-center text-fg-3">No match</li>}
+              {filtered.map((c, i) => (
+                <li
+                  key={c.id}
+                  id={`cmd-${c.id}`}
+                  role="option"
+                  aria-selected={i === index}
+                  onClick={() => run(c)}
+                  onPointerEnter={() => setIndex(i)}
+                  className={`grid cursor-pointer grid-cols-[2.5rem_1fr_auto] items-center gap-3 px-4 py-3 ${i === index ? "bg-graphite" : ""}`}
+                >
+                  <span className={`t-mono ${i === index ? "text-signal" : "text-fg-3"}`}>{c.glyph}</span>
+                  <span className="text-[0.9375rem]">{c.label}</span>
+                  <span className="t-mono truncate normal-case tracking-[0.04em] text-fg-3">{c.hint}</span>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </>
       )}
